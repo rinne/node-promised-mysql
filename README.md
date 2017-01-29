@@ -8,11 +8,11 @@ Examples
 --------
 
 ```
-const PromisedMySQL = require('tr-promised-mysql');
+const TrPromisedMySQL = require('tr-promised-mysql');
 
 // Config struct is identical to one that can be passed to mysql
 // package pool creation.
-var m = new PromisedMySQL(
+var m = new TrPromisedMySQL(
   {
      database: 'dbname',
      host: '127.0.0.1',
@@ -35,8 +35,8 @@ var m = new PromisedMySQL(
 And somewhat more elaborate use case.
 
 ```
-const PromisedMySQL = require('tr-promised-mysql');
-var m = new PromisedMySQL(require('./my-db-config.js'));
+const TrPromisedMySQL = require('tr-promised-mysql');
+var m = new TrPromisedMySQL(require('./my-db-config.js'));
 
 var conn = undefined;
 (m.getConnection()

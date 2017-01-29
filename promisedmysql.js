@@ -4,7 +4,7 @@ const mysql = require('mysql');
 const err = require('./err.js');
 const KeepTime = require('keeptime');
 
-var PromisedMySQL = function(config) {
+var TrPromisedMySQL = function(config) {
 	if (! (config && (typeof(config) === 'object'))) {
         throw err('Bad database configuration object');
 	}
@@ -197,7 +197,7 @@ var executeQuery = function (pool, query, params) {
 	}.bind(this));
 };
 
-PromisedMySQL.prototype.exec = function (query, params, conn) {
+TrPromisedMySQL.prototype.exec = function (query, params, conn) {
 	var c;
 	var execute = executeQuery.bind(this);
 	if (conn) {
@@ -212,13 +212,13 @@ PromisedMySQL.prototype.exec = function (query, params, conn) {
 			.catch(function(e) { throw e; }));
 };
 
-PromisedMySQL.prototype.insert = function (query, params, conn) {
+TrPromisedMySQL.prototype.insert = function (query, params, conn) {
 	return (this.exec(query, params, conn)
 			.then(function(res) { return res.insertId; })
 			.catch(function(e) { throw e; }));
 };
 
-PromisedMySQL.prototype.getConnection = function () {
+TrPromisedMySQL.prototype.getConnection = function () {
 	return new Promise(function (resolve, reject) {
 		this.pool.getConnection(function (e, conn) {
 			if (e) {
@@ -230,7 +230,7 @@ PromisedMySQL.prototype.getConnection = function () {
 	}.bind(this));
 };
 
-PromisedMySQL.prototype.releaseConnection = function (conn, destroy) {
+TrPromisedMySQL.prototype.releaseConnection = function (conn, destroy) {
 	return new Promise(function (resolve, reject) {
 		if (this.reservedConns.delete(conn)) {
 			if (destroy) {
@@ -252,4 +252,4 @@ PromisedMySQL.prototype.releaseConnection = function (conn, destroy) {
 	}.bind(this));
 };
 
-module.exports = PromisedMySQL;
+module.exports = TrPromisedMySQL;
