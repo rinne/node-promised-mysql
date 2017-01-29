@@ -1,6 +1,6 @@
 {
 	"name": "tr-promised-mysql",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "Promise based wrapper around https://www.npmjs.com/package/mysql.",
 	"main": "promisedmysql.js",
 	"scripts": {

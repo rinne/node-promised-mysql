@@ -40,12 +40,15 @@ var m = new TrPromisedMySQL(require('./my-db-config.js'));
 
 var conn = undefined;
 (m.getConnection()
- .then(function() {
+ .then(function(res) {
    conn = res;
    return m.exec("BEGIN", {}, conn);
  })
  .then(function() {
    // Do something within the transaction ...
+ })
+ .then(function() {
+   // Do something else within the transaction ...
  })
  .then(function() {
    return m.exec("COMMIT", {}, conn);
