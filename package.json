@@ -1,5 +1,5 @@
 {
-	"name": "promised-mysql",
+	"name": "tr-promised-mysql",
 	"version": "0.0.1",
 	"description": "Promise based wrapper around https://www.npmjs.com/package/mysql.",
 	"main": "promisedmysql.js",
@@ -15,7 +15,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/rinne/node-promised-mysql.git"
+		"url": "git+https://github.com/rinne/node-tr-promised-mysql.git"
 	},
 	"keywords": [
 		"database",
@@ -29,7 +29,7 @@
 	},
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/rinne/node-promised-mysql/issues"
+		"url": "https://github.com/rinne/node-tr-promised-mysql/issues"
 	},
-	"homepage": "https://github.com/rinne/node-promised-mysql#readme"
+	"homepage": "https://github.com/rinne/node-tr-promised-mysql#readme"
 }

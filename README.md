@@ -8,7 +8,7 @@ Examples
 --------
 
 ```
-const PromisedMySQL = require('promised-mysql');
+const PromisedMySQL = require('tr-promised-mysql');
 
 // Config struct is identical to one that can be passed to mysql
 // package pool creation.
@@ -35,7 +35,7 @@ var m = new PromisedMySQL(
 And somewhat more elaborate use case.
 
 ```
-const PromisedMySQL = require('promised-mysql');
+const PromisedMySQL = require('tr-promised-mysql');
 var m = new PromisedMySQL(require('./my-db-config.js'));
 
 var conn = undefined;
